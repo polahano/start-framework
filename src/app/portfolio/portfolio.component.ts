@@ -13,7 +13,6 @@ import { log } from 'console';
   styleUrl: './portfolio.component.css'
 })
 export class PortfolioComponent {
-  @ViewChild('modal') modal!:HTMLDivElement;
   
 openModal() {
   

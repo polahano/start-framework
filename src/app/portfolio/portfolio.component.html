@@ -10,7 +10,7 @@
   <div class="container">
     <div class="flex justify-around flex-wrap gap-3">
       @for (card of portfolioItems; track $index) {
-      <app-card class="w-[30%] justify-center" (click)="openModal()">
+      <app-card class="w-[30%] justify-center">
         <img [src]="card.image" alt="" class="w-100 rounded-2xl peer/test" />
       </app-card>
       }
