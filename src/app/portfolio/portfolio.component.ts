@@ -1,7 +1,9 @@
-import { Component } from '@angular/core';
+import { Component, ViewChild, viewChild } from '@angular/core';
 import { CardComponent } from "../card/card.component";
 import { FontAwesomeModule } from '@fortawesome/angular-fontawesome';
 import { faStar } from '@fortawesome/free-solid-svg-icons';
+import { ModalComponent } from '../modal/modal.component';
+import { log } from 'console';
 
 
 @Component({
@@ -11,16 +13,29 @@ import { faStar } from '@fortawesome/free-solid-svg-icons';
   styleUrl: './portfolio.component.css'
 })
 export class PortfolioComponent {
+  @ViewChild('modal') modal!:HTMLDivElement;
+  
+openModal() {
+  
+}
+
 faStar = faStar;
 cards:Number[]=[1,2,3]
 
   portfolioItems = [
-  { image: '/src/assets/images/port1.png' },
-  { image: 'assets/images/port2.png' },
-  { image: 'assets/images/port3.png' },
-  { image: 'assets/images/port4.png' },
-  { image: 'assets/images/port5.png' },
-  { image: 'assets/images/port6.png' }
+  { image: '/port1.png' },
+  { image: '/port2.png' },
+  { image: '/port3.png' },
+  { image: '/port4.png' },
+  { image: '/port5.png' },
+  { image: '/port6.png' }
   ];
+
+  //     @ViewChild('modal') modal!: HTMLDivElement; // For an HTML element
+
+  // openModal(){
+  //   log(this.modal)
+  //   this.modal.classList.toggle('flex');
+  // }
 
 }

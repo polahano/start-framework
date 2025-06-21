@@ -1,4 +1,5 @@
-import { Component } from '@angular/core';
+import { Component, ViewChild } from '@angular/core';
+import { log } from 'console';
 
 @Component({
   selector: 'app-card',
@@ -8,4 +9,10 @@ import { Component } from '@angular/core';
 })
 export class CardComponent {
 
+  //       @ViewChild('modal') modal!: HTMLDivElement; // For an HTML element
+
+  // openModal(){
+  //   log(this.modal)
+  //   this.modal.classList.toggle('flex');
+  // }
 }
