@@ -1,4 +1,4 @@
-import { Component } from '@angular/core';
+import { Component, HostListener, ViewChild } from '@angular/core';
 import { RouterLink, RouterLinkActive } from '@angular/router';
 
 @Component({
@@ -9,4 +9,16 @@ import { RouterLink, RouterLinkActive } from '@angular/router';
 })
 export class NavbarComponent {
 
+  @ViewChild('navbar') navbar!:any;
+
+  @HostListener('window:scroll',[])
+  onScroll():void{
+    if(window.scrollY > 10){
+      this.navbar.nativeElement.classList.replace('py-4','py-2')
+    } else{
+      this.navbar.nativeElement.classList.replace('py-2','py-4')
+    }
+  }
+
+  
 }
