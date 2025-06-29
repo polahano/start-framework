@@ -1,7 +1,6 @@
 <div
-  #modal
-  class="w-full vh-100 bg-gray-500/60 justify-center items-center absolute top-0 bottom-0 start-0 end-0 flex"
+  class="layer w-full vh-100 bg-gray-500/60 justify-center items-center fixed inset-0 flex z-30"
+  (click)="onModalClick($event)"
 >
-  <!-- <ng-content></ng-content> -->
-  <img src="/port1.png" alt="" />
+  <img [src]="image" alt="" />
 </div>

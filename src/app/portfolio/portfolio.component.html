@@ -6,12 +6,20 @@
     <div class="bg-white w-8 h-1"></div>
   </div>
   <div class="container">
-    <div class="flex justify-around flex-wrap gap-3">
+    <div class="flex justify-around flex-wrap gap-3 columns-3">
       @for (card of portfolioItems; track $index) {
-      <app-card class="w-[30%] justify-center">
-        <img [src]="card.image" alt="" class="w-100 rounded-2xl peer/test" />
-      </app-card>
+      <div class="card relative cursor-pointer" (click)="showModal(card.image)">
+        <img [src]="card.image" alt="" class="w-100 rounded-2xl peer" />
+        <div
+          class="bg-amber-500 rounded-2xl inset-0 absolute opacity-0 justify-center peer-hover:opacity-100"
+        >
+          <span class="text-9xl" style="align-self: center">+</span>
+        </div>
+      </div>
       }
     </div>
+    @if(isModalOpen){
+    <app-modal [image]="currentImage" (closeModal)="hideModal()" />
+    }
   </div>
 </div>

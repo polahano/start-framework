@@ -8,7 +8,7 @@ import { log } from 'console';
 
 @Component({
   selector: 'app-portfolio',
-  imports: [CardComponent,FontAwesomeModule],
+  imports: [CardComponent, FontAwesomeModule, ModalComponent],
   templateUrl: './portfolio.component.html',
   styleUrl: './portfolio.component.css'
 })
@@ -37,4 +37,15 @@ cards:Number[]=[1,2,3]
   //   this.modal.classList.toggle('flex');
   // }
 
+  isModalOpen:boolean = false;
+  currentImage:any;
+
+  showModal(image:any):void{
+    this.isModalOpen=true;
+    this.currentImage = image;
+  }
+
+  hideModal(){
+    this.isModalOpen=false;
+  }
 }
